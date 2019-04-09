@@ -1,0 +1,71 @@
+
+<% include partials/header.ejs %>
+<div class="contenainer">
+        <%= product%>
+    <% if(message!="") {%>
+    <p class="txt-center  h1 text-danger"><%= message %></p>
+       <% } %>
+<div class="float-right col-cm-6">
+    <img src="../assets/imgs/<%=product.productID %>.<%=product.image.split('.')[1] %>"
+    class="rounded-circle" style="width: 500px; height: 500px;"
+    alt="<%=product.image%>" />
+</div>
+
+<form style="margin-top: 50px; margin-bottom: 100px; margin-left: 30px" action="" method="POST" enctype="multipart/form-data">
+    <div class="form-row">
+            <div class="form-group col-cm-6">
+                    <label for="category"> Category :</label>
+        <select id="category" name="category" class="form-control" required>
+             <option selected><%=product.category%></option>
+             <option>samsung</option>
+             <option>sony</option>
+             <option>iphone</option>
+             <option>oppo</option>
+             <option>others</option>
+        </select>
+        </div>
+    </div>
+    <div class="form-row">
+         <div class="form-group col-cm-6">
+            <label for="title">Title :</label>
+            <input id="title" type="text" name="title" class="form-control" required placeholder="title"
+            value="<%=product.title%>">        
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-cm-6">
+            <label for="description">Description :</label>
+           <textarea cols="25" rows="3" id="description" name="description" class="form-control" required 
+           placeholder="description"><%=product.description%></textarea>         
+       </div>
+   </div>
+
+   <div class="form-row">
+    <div class="form-group col-cm-6">
+            <label for="quantity">Quantity :</label>
+            <input id="quantity" type="number" name="quantity" class="form-control" required placeholder="quantity"
+            value="<%=product.quantity%>">        
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-cm-6">
+            <label for="price">price :</label>
+            <input id="price" type="number" name="price" class="form-control" required placeholder="price"
+            value="<%=product.price%>">        
+        </div>
+    </div>
+
+
+    <div class="form-row">
+            <div class="form-group col-cm-6">
+                <label for="image">product Image :</label>
+               <input id="image" type="file" name="image" class="form-control" required placeholder="Image">        
+           </div>
+       </div>
+       <div class="text-center">
+            <button type="submit" class="btn btn-primary"> &nbsp; &nbsp; &nbsp; save a Product &nbsp; &nbsp; &nbsp;</button>
+       </div>
+   </form>
+</div>

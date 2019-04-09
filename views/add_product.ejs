@@ -1,0 +1,66 @@
+
+<% include partials/header.ejs %>
+<div class="contenainer">
+    <% if(message!="") {%>
+    <p class="txt-center  h1 text-danger"><%= message %></p>
+       <% } %>
+
+<form style="margin-top: 50px; margin-bottom: 100px; margin-left:20px;" action="" method="POST" enctype="multipart/form-data">
+    <!-- <div style="background:red;">  <h1>Welcome Dr: Ezat</h1></div> -->
+      
+       
+    <div class="form-row">
+            <div class="form-group col-cm-6">
+        <select id="category" name="category" class="form-control" required>
+             <option selected disabled>choose category</option>
+             <option>samsung</option>
+             <option>sony</option>
+             <option>iphone</option>
+             <option>oppo</option>
+             <option>infinix</option>
+             <option>others</option>
+        </select>
+        </div>
+    </div>
+    <div class="form-row">
+         <div class="form-group col-cm-6">
+            <input id="title" type="text" name="title" class="form-control" required placeholder="title">      
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-cm-6">
+           <textarea cols="25" rows="3" id="description" name="description" class="form-control" required placeholder="description"></textarea>         
+       </div>
+   </div>
+
+   <div class="form-row">
+    <div class="form-group col-cm-6">
+            <input id="quantity" type="number" name="quantity" class="form-control" required placeholder="quantity">        
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-cm-6">
+            <input id="price" type="number" name="price" class="form-control" required placeholder="price">        
+        </div>
+    </div>
+
+
+    <div class="form-row">
+            <div class="form-group col-cm-6">
+                <label for="image">product Image :</label>
+               <input id="image" type="file" name="image" class="form-control" required placeholder="Image">        
+           </div>
+       </div>
+       <div class="text-center">
+            <button type="submit" class="btn btn-primary"> &nbsp; &nbsp; &nbsp; save a Product &nbsp; &nbsp; &nbsp;</button>
+       </div>
+
+
+       <div>
+        <!-- <h1>Welcome Dr: Ezat</h1> -->
+       </div>
+   </form>
+</div>
